@@ -1,4 +1,3 @@
-
 call plug#begin('~/.vim/plugged')
 
 " black for python
@@ -8,8 +7,11 @@ Plug 'ambv/black'
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
 
+Plug 'mbbill/undotree'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 Plug 'takac/vim-hardtime'
 
@@ -23,3 +25,5 @@ call plug#end()
 autocmd BufNewFile */journal/** 0r ~/.vim/skeleton.diary
 
 let mapleader=" "
+
+nnoremap <leader>u :UndotreeShow<CR>
