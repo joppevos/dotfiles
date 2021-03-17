@@ -10,9 +10,11 @@ Plug 'szw/vim-maximizer'
 Plug 'mbbill/undotree'
 Plug 'drewtempelmeyer/palenight.vim'
 
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" for writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'takac/vim-hardtime'
 
 " fuzzy finder
@@ -21,7 +23,7 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-" diary
+" journaling
 autocmd BufNewFile */journal/** 0r ~/.vim/skeleton.diary
 
 let mapleader=" "
