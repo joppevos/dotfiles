@@ -1,1 +1,20 @@
-/Users/vosjoppe/.ideavimrc
+" able to paste from clipboard
+set clipboard+=unnamed
+syntax on
+set rnu
+set surround " ys, cs, ds, S
+set highlightedyank
+
+set NERDTree
+
+let mapleader=" "
+map <leader>p :NERDTree<CR>
+map <leader>t :action ActivateTerminalToolWindow<CR>
+
+" The default C-o and C-i behaviours have certain inconsistencies with
+" Vim which I can't quite pinpoint.
+" I'm using the default IntelliJ behaviours instead.
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
+map g; <Action>(JumpToLastChange)
+map g, <Action>(JumpToNextChange)
