@@ -18,3 +18,5 @@ map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
 map g; <Action>(JumpToLastChange)
 map g, <Action>(JumpToNextChange)
+
+set scrolloff=8       " Show next 3 lines while scrolling.
