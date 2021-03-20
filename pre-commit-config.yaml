@@ -1,0 +1,27 @@
+---
+# config file for pre-commit python
+repos:
+  - repo: https://github.com/psf/black
+    rev: 20.8b1
+    hooks:
+      - id: black
+        files: \.py$
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.812  
+    hooks:
+      - id: mypy
+        args: [--disallow-untyped-defs, --ignore-missing-imports]
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.7.9
+    hooks:
+      - id: flake8
+        entry: flake8 --max-line-length=80
+        files: \.py$
+  - repo: https://github.com/timothycrosley/isort
+    rev: 5.6.4
+    hooks:
+      - id: isort
+        entry: isort --settings-path .github/linters/.isort.cfg
+        name: Run isort to sort imports
+        description: "Sorts python imports"
+        files: \.py$
