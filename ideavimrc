@@ -10,6 +10,7 @@ set NERDTree
 let mapleader=" "
 map <leader>p :NERDTree<CR>
 map <leader>t :action ActivateTerminalToolWindow<CR>
+map <leader>q :action CloseActiveTab<CR>
 
 " The default C-o and C-i behaviours have certain inconsistencies with
 " Vim which I can't quite pinpoint.
