@@ -5,8 +5,9 @@ mkdir -p ~/.config/nvim/lua
 
 # link wholesale
 for f in `find . -regex ".*\.vim"`; do
-    echo $f
-    rm -rf ~/.config/nvim/$f
-    ln -s ~/vos-dotfiles/$f ~/.config/nvim/$f
+    fs="${f:2}"
+    echo $fs
+    rm -rf ~/.config/nvim/$fs
+    ln -s ~/dotfiles/$fs ~/.config/nvim/$fs
 done
 
