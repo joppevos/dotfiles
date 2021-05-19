@@ -15,13 +15,11 @@ repos:
     rev: 3.7.9
     hooks:
       - id: flake8
-        entry: flake8 --max-line-length=80
         files: \.py$
   - repo: https://github.com/timothycrosley/isort
     rev: 5.6.4
     hooks:
       - id: isort
-        entry: isort --settings-path .github/linters/.isort.cfg
         name: Run isort to sort imports
         description: "Sorts python imports"
         files: \.py$
