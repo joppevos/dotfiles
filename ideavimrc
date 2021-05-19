@@ -11,6 +11,7 @@ let mapleader=" "
 map <leader>p :NERDTree<CR>
 map <leader>t :action ActivateTerminalToolWindow<CR>
 map <leader>q :action CloseActiveTab<CR>
+map <leader>gb :action Git.Branches
 
 " The default C-o and C-i behaviours have certain inconsistencies with
 " Vim which I can't quite pinpoint.
@@ -20,4 +21,5 @@ map <C-i> <Action>(Forward)
 map g; <Action>(JumpToLastChange)
 map g, <Action>(JumpToNextChange)
 
-set scrolloff=8       " Show next 3 lines while scrolling.
+set scrolloff=8       " Show next 3 lines while scrolling. 
+

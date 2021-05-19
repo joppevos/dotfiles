@@ -7,8 +7,13 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Focus
+Plug 'junegunn/goyo.vim'
+
 " need to stay fast
 Plug 'takac/vim-hardtime'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 
