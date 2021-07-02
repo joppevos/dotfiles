@@ -1,6 +1,7 @@
 # dotfiles
--zshell
--ohmyzsh
--neovim
--tmux
--pre-commit
+
+- zshell
+- ohmyzsh
+- neovim
+- tmux
+- pre-commit

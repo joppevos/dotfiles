@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 mkdir -p ~/.config/nvim/plugin
-mkdir -p ~/.config/nvim/after/plugin
 mkdir -p ~/.config/nvim/lua
 
 # link wholesale
@@ -8,6 +7,6 @@ for f in `find . -regex ".*\.vim"`; do
     fs="${f:2}"
     echo $fs
     rm -rf ~/.config/nvim/$fs
-    ln -s ~/dotfiles/$fs ~/.config/nvim/$fs
+    ln -s /Users/vosjoppe/vos-dotfiles/$fs /Users/vosjoppe/.config/nvim/$fs
 done
 
