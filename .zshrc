@@ -2,12 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # complete autosuggest with TAB
-bindkey '^I' autosuggest-accept
+bindkey '`' autosuggest-accept
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/vosjoppe/.oh-my-zsh"
 export SP_USER_NAME="vosjoppe"
 
-alias journal='cd /Users/vosjoppe/Documents/notes/journal && vim $(date "+%d-%m-%Y").md'
+alias journal='cd /Users/vosjoppe/Documents/notes/journal && nvim $(date "+%d-%m-%Y").md'
 alias todo='vim ~/.todo.md'
 alias cheatsheet='nvim ~/Documents/vos-cheatsheet/sheet.md'
 
