@@ -10,10 +10,13 @@ Plug 'junegunn/fzf.vim'
 " Focus
 Plug 'junegunn/goyo.vim'
 
-" need to stay fast
+" stop bad habbits
 Plug 'takac/vim-hardtime'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" Gotta Go fast
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 

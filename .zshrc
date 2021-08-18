@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
 
 # complete autosuggest with TAB
 bindkey '`' autosuggest-accept
@@ -8,8 +9,9 @@ export ZSH="/Users/vosjoppe/.oh-my-zsh"
 export SP_USER_NAME="vosjoppe"
 
 alias journal='cd /Users/vosjoppe/Documents/notes/journal && nvim $(date "+%d-%m-%Y").md'
-alias todo='vim ~/.todo.md'
+alias todo='nvim -c Goyo ~/.todo.md'
 alias cheatsheet='nvim ~/Documents/vos-cheatsheet/sheet.md'
+alias workout='nvim ~/Documents/notes/workout.md'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
