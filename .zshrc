@@ -12,6 +12,7 @@ alias journal='cd /Users/vosjoppe/Documents/notes/journal && nvim $(date "+%d-%m
 alias todo='nvim -c Goyo ~/.todo.md'
 alias cheatsheet='nvim ~/Documents/vos-cheatsheet/sheet.md'
 alias workout='nvim ~/Documents/notes/workout.md'
+alias focus='sudo ~/scripts/stop_distraction.sh'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -134,3 +135,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/usr/local/opt/libpq/bin:$PATH"

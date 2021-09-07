@@ -18,6 +18,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 " Gotta Go fast
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+
+" Comment in-out
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " journaling
@@ -26,3 +31,8 @@ autocmd BufNewFile */journal/** 0r ~/.vim/skeleton.diary
 let mapleader=" "
 
 nnoremap <leader>u :UndotreeShow<CR>
+nnoremap ff :GitFiles<CR>
+" Golang
+
+" autocomplete suggestion when pressing dot in INSERT mode
+"au filetype go inoremap <buffer> . .<C-x><C-o>
