@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged') 
 
-Plug 'mbbill/undotree'
+" theme
+" Plug 'mbbill/undotree'
 Plug 'drewtempelmeyer/palenight.vim'
 
 " fuzzy finder
@@ -13,18 +14,21 @@ Plug 'junegunn/goyo.vim'
 " stop bad habbits
 Plug 'takac/vim-hardtime'
 
+" Marktdown previewer
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " Gotta Go fast
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" Treesitter  
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/playground'
 
 " Comment in-out
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
 
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
+" amazing git integrations
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -35,7 +39,8 @@ let mapleader=" "
 
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap ff :GitFiles<CR>
-" Golang
 
-" autocomplete suggestion when pressing dot in INSERT mode
-"au filetype go inoremap <buffer> . .<C-x><C-o>
+lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
+
+set completeopt=menuone,noselect
+
