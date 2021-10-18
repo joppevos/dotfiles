@@ -1,0 +1,75 @@
+call plug#begin('~/.vim/plugged')
+
+" theme
+" Plug 'mbbill/undotree'
+Plug 'drewtempelmeyer/palenight.vim'
+
+" fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Focus
+Plug 'junegunn/goyo.vim'
+
+" stop bad habbits
+Plug 'takac/vim-hardtime'
+
+" Marktdown previewer
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" Gotta Go fast
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Treesitter  
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/playground'
+
+" Comment in-out
+Plug 'tpope/vim-commentary'
+
+" amazing git integrations
+Plug 'tpope/vim-fugitive'
+
+" lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'simrat39/symbols-outline.nvim'
+
+" Shiny status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'mbbill/undotree'
+
+" Terraform
+Plug 'hashivim/vim-terraform'
+
+call plug#end()
+
+" journaling
+autocmd BufNewFile */journal/** 0r ~/.vim/skeleton.diary
+
+let mapleader=" "
+
+" Fzf 
+nnoremap <leader>u :UndotreeShow<CR>
+nnoremap ff :GitFiles<CR>
+
+" Yank to clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+
+" Golang
+nnoremap <leader>tf :GoTestFunc<CR>
+
+lua require("lsp")
+lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
+
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+augroup END
+
+" autocomplete prompt on dot 
+au filetype go inoremap <buffer> . .<C-x><C-o>
+

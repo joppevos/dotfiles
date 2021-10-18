@@ -1,0 +1,54 @@
+":source ~/.ideavimrc
+
+" able to paste from clipboard
+" set clipboard+=unnamed
+syntax on
+set rnu " relation line
+set commentary " able to comment out with gc
+set history=500
+set hlsearch
+set ideajoin
+set ignorecase
+set scrolloff=8       " Show next 8 lines while scrolling.
+set visualbell " stop the ringing bell
+
+"-------------------------------------------------------------------------------
+" IdeaVim Plugin Emulations
+"-------------------------------------------------------------------------------
+set NERDTree
+set surround " ys, cs, ds, S
+set highlightedyank
+set surround
+
+"-------------------------------------------------------------------------------
+" Mappings
+"-------------------------------------------------------------------------------
+let mapleader=" "
+
+" window split navigation like VIM {{{
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+
+" Yank to clipboard
+noremap Y y$
+map <leader>y "+y
+map <leader>y "+y
+
+map <leader>r     :action ReformatCode <CR>
+map <leader>p     :NERDTree<CR>
+map <leader>t     :action ActivateTerminalToolWindow<CR>
+map <leader>q     :action CloseActiveTab<CR>
+map <leader>o     :action GotoFile<CR>
+
+" Go refactor
+nmap gr :action Refactorings.QuickListPopupAction<CR>
+
+" The default C-o and C-i behaviours have certain inconsistencies with
+" Vim which I can't quite pinpoint
+" I'm using the default IntelliJ behaviours instead.
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
+map g; <Action>(JumpToLastChange)
+map g, <Action>(JumpToNextChange)
