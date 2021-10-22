@@ -31,8 +31,9 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-h> <C-w>h
 
-" Yank to clipboard
 noremap Y y$
+
+" Yank to clipboard
 map <leader>y "+y
 map <leader>y "+y
 
@@ -41,6 +42,7 @@ map <leader>p     :NERDTree<CR>
 map <leader>t     :action ActivateTerminalToolWindow<CR>
 map <leader>q     :action CloseActiveTab<CR>
 map <leader>o     :action GotoFile<CR>
+map <leader>ro     :action RecentFiles<CR>
 
 " Go refactor
 nmap gr :action Refactorings.QuickListPopupAction<CR>
