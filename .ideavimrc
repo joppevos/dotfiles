@@ -37,15 +37,16 @@ noremap Y y$
 map <leader>y "+y
 map <leader>y "+y
 
-map <leader>r     :action ReformatCode <CR>
+" fzf like
+nnoremap ff :action GotoFile<CR>
+nnoremap <Leader>f :action SearchEverywhere<CR>
+nnoremap <leader>rf     :action RecentFiles<CR>
+
+map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
 map <leader>p     :NERDTree<CR>
 map <leader>t     :action ActivateTerminalToolWindow<CR>
 map <leader>q     :action CloseActiveTab<CR>
-map <leader>o     :action GotoFile<CR>
-map <leader>ro     :action RecentFiles<CR>
-
-" Go refactor
-nmap gr :action Refactorings.QuickListPopupAction<CR>
+"map <leader>o     :action GotoFile<CR>
 
 " The default C-o and C-i behaviours have certain inconsistencies with
 " Vim which I can't quite pinpoint
