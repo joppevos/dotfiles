@@ -3,7 +3,7 @@
 " able to paste from clipboard
 " set clipboard+=unnamed
 syntax on
-set rnu " relation line
+set rnu " relational line numbers
 set commentary " able to comment out with gc
 set history=500
 set hlsearch
@@ -46,7 +46,8 @@ map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
 map <leader>p     :NERDTree<CR>
 map <leader>t     :action ActivateTerminalToolWindow<CR>
 map <leader>q     :action CloseActiveTab<CR>
-"map <leader>o     :action GotoFile<CR>
+
+map <C-r>     :action Rerun<CR>
 
 " The default C-o and C-i behaviours have certain inconsistencies with
 " Vim which I can't quite pinpoint
@@ -55,3 +56,13 @@ map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
 map g; <Action>(JumpToLastChange)
 map g, <Action>(JumpToNextChange)
+
+" Folding like vim
+nnoremap zC         :action CollapseRegionRecursively<CR>
+nnoremap zO         :action ExpandRegionRecursively<CR>
+map <leader>zc      :action CollapseAllRegions<CR>
+map <leader>zo      :action ExpandAllRegions<CR>
+
+map <C-z> :action ToggleDistractionFreeMode<CR>
+
+
