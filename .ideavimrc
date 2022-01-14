@@ -31,7 +31,14 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-h> <C-w>h
 
+" maximize panel like tmux
+map <C->z :action No
+
 noremap Y y$
+
+" jump methods
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
 
 " Yank to clipboard
 map <leader>y "+y
@@ -39,13 +46,14 @@ map <leader>y "+y
 
 " fzf like
 nnoremap ff :action GotoFile<CR>
-nnoremap <Leader>f :action SearchEverywhere<CR>
+noremap <Leader>ff :action FindInPath<CR>
 nnoremap <leader>rf     :action RecentFiles<CR>
 
 map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
 map <leader>p     :NERDTree<CR>
 map <leader>t     :action ActivateTerminalToolWindow<CR>
 map <leader>q     :action CloseActiveTab<CR>
+map <leader>o     :action ReformatCode<CR>
 
 map <C-r>     :action Rerun<CR>
 
@@ -63,6 +71,8 @@ nnoremap zO         :action ExpandRegionRecursively<CR>
 map <leader>zc      :action CollapseAllRegions<CR>
 map <leader>zo      :action ExpandAllRegions<CR>
 
-map <C-z> :action ToggleDistractionFreeMode<CR>
+" To set editor >code style -> increase hard wraps to > 200"
+" make sure to turn on line numbers in settings before
+map <C-z> <Action>(ToggleFullScreen)<Action>(ToggleDistractionFreeMode)
 
 
