@@ -18,7 +18,6 @@ set visualbell " stop the ringing bell
 set NERDTree
 set surround " ys, cs, ds, S
 set highlightedyank
-set surround
 
 "-------------------------------------------------------------------------------
 " Mappings
@@ -46,7 +45,7 @@ map <leader>y "+y
 
 " fzf like
 nnoremap ff :action GotoFile<CR>
-noremap <Leader>ff :action FindInPath<CR>
+noremap <Leader>f :action FindInPath<CR>
 nnoremap <leader>rf     :action RecentFiles<CR>
 
 map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
@@ -74,5 +73,10 @@ map <leader>zo      :action ExpandAllRegions<CR>
 " To set editor >code style -> increase hard wraps to > 200"
 " make sure to turn on line numbers in settings before
 map <C-z> <Action>(ToggleFullScreen)<Action>(ToggleDistractionFreeMode)
+
+" built in search looks better
+nnoremap / :action Find<cr>
+" but preserve ideavim search
+nnoremap g/ /
 
 
