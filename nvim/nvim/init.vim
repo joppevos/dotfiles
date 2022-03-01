@@ -44,6 +44,9 @@ Plug 'mbbill/undotree'
 " Terraform
 Plug 'hashivim/vim-terraform'
 
+
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 " journaling
@@ -54,6 +57,11 @@ let mapleader=" "
 " Fzf 
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap ff :GitFiles<CR>
+nnoremap <Leader>f :Rg<CR>
+
+
+" yank like delete 
+noremap Y y$
 
 " Yank to clipboard
 nnoremap <leader>y "+y
@@ -61,6 +69,7 @@ vnoremap <leader>y "+y
 
 " Golang
 nnoremap <leader>tf :GoTestFunc<CR>
+nnoremap <leader>gr :GoRun<CR>
 
 lua require("lsp")
 lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
@@ -72,4 +81,9 @@ augroup END
 
 " autocomplete prompt on dot 
 au filetype go inoremap <buffer> . .<C-x><C-o>
+
+
+
+
+"let g:hardtime_default_on = 1
 
