@@ -2,18 +2,25 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
-
+autoload -Uz compinit
+compinit
 # complete autosuggest with TAB
 bindkey '`' autosuggest-accept
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/vosjoppe/.oh-my-zsh"
-export SP_USER_NAME="vosjoppe"
 
-alias journal='cd /Users/vosjoppe/Documents/notes/journal && nvim $(date "+%d-%m-%Y").md'
-alias todo='nvim -c Goyo ~/.todo.md'
-alias cheatsheet='nvim ~/Documents/vos-cheatsheet/sheet.md'
 alias workout='nvim ~/Documents/notes/workout.md'
-alias focus='sudo ~/scripts/stop_distraction.sh'
+alias k=kubectl
+alias t=terraform
+# launch diary from command line:
+alias diary='nvim -c ":VimwikiMakeDiaryNote"'
+## launch index page from command line
+alias vw='nvim -c ":VimwikiIndex"'
+alias td='nvim ~/vimwiki/todo.md'
+source <(kubectl completion zsh)
+alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
+
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -114,6 +121,9 @@ prompt_context() {}
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
+# add non-work email to git
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
 # tmux colors
 export TERM=xterm-256color
 . $HOME/.ghcup/env
@@ -121,4 +131,20 @@ export TERM=xterm-256color
 
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
-source ~/.profile
+# Add bin to path
+export PATH="/Users/$USER/bin:$PATH"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/vosjoppe/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vosjoppe/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/Users/vosjoppe/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vosjoppe/bin/google-cloud-sdk/completion.zsh.inc'; fi
+# eval "$(pyenv init -)"
+
+# Created by `pipx` on 2022-04-11 08:19:51
+# export PATH="$PATH:/Users/vosjoppe/.local/bin"
+# START: Added by Updated Airflow Breeze autocomplete setup
+source /Users/vosjoppe/github/airflow/dev/breeze/autocomplete/breeze-complete-zsh.sh
+# END: Added by Updated Airflow Breeze autocomplete setup
+

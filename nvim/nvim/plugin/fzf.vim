@@ -9,3 +9,6 @@ endfunction
 nnoremap <leader>p :ProjectFiles<CR>
 nnoremap <leader>rf :Buffers<CR>
 
+" Rg command that takes arguments. Used for giving directories as arg
+command! -bang -nargs=* DRg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+

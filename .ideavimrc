@@ -48,6 +48,7 @@ nnoremap ff :action GotoFile<CR>
 noremap <Leader>f :action FindInPath<CR>
 nnoremap <leader>rf     :action RecentFiles<CR>
 
+nmap gD :action GotoImplementation<CR>
 map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
 map <leader>p     :NERDTree<CR>
 map <leader>t     :action ActivateTerminalToolWindow<CR>
@@ -74,9 +75,5 @@ map <leader>zo      :action ExpandAllRegions<CR>
 " make sure to turn on line numbers in settings before
 map <C-z> <Action>(ToggleFullScreen)<Action>(ToggleDistractionFreeMode)
 
-" built in search looks better
-nnoremap / :action Find<cr>
-" but preserve ideavim search
-nnoremap g/ /
 
 

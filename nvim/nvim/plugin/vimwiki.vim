@@ -7,6 +7,7 @@
 let wiki = {
 \           'path': '~/vimwiki/',
 \           'path_html': '~/vimwiki/HTML/',
+\           'auto_diary_index': 1,
 \           'auto_export': 0,
 \           'index': 'home',
 \           'syntax': 'markdown',
@@ -22,6 +23,7 @@ let g:vimwiki_list = [wiki]
 " When opening a directory containing a file with this name and default wiki
 " extention, assume it is a vimwiki
 let g:vimwiki_dir_link = ''
+
 " Only treat .md files under a path in vimwiki_list as wiki files
 let g:vimwiki_global_ext = 0
 
@@ -29,7 +31,11 @@ set nocompatible
 filetype plugin on
 syntax on
 
-nnoremap tt :VimwikiToggleListItem<CR>
-nnoremap dn :VimwikiMakeDiaryNote<CR>
+nnoremap <leader>dn :VimwikiDiaryNextDay<CR>
+nnoremap <leader>dp :VimwikiDiaryPrevDay<CR>
 
+nnoremap <leader>dd :VimwikiMakeDiaryNote<CR>
 nmap <Leader>wp :Files ~/vimwiki/<CR>
+
+" inoremap <buffer> <leader>xo <C-o>"cciW[](<C-r>c)<left><c-x><c-o>
+" inoremap <buffer> <c-y><c-y> <c-y><esc><esc>T(vt)y<esc>F[pf)a <left

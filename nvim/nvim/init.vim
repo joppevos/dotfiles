@@ -49,9 +49,6 @@ Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-" journaling
-autocmd BufNewFile */journal/** 0r ~/.vim/skeleton.diary
-
 let mapleader=" "
 
 " Fzf 
@@ -82,8 +79,9 @@ augroup END
 " autocomplete prompt on dot 
 au filetype go inoremap <buffer> . .<C-x><C-o>
 
-
-
-
 "let g:hardtime_default_on = 1
+set t_ZH=^[[3m
+set t_ZR=^[[23m
+
+
 
