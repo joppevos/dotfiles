@@ -4,11 +4,9 @@
 #
 autoload -Uz compinit
 compinit
-# complete autosuggest with TAB
-bindkey '`' autosuggest-accept
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/vosjoppe/.oh-my-zsh"
-
+alias openvpn="/usr/local/opt/openvpn/sbin/openvpn"
 alias workout='nvim ~/Documents/notes/workout.md'
 alias k=kubectl
 alias t=terraform
@@ -19,6 +17,7 @@ alias vw='nvim -c ":VimwikiIndex"'
 alias td='nvim ~/vimwiki/todo.md'
 source <(kubectl completion zsh)
 alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
+source ~/.profile
 
 
 
@@ -86,9 +85,11 @@ ZSH_DISABLE_COMPFIX=true
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions autojump)
+plugins=(git zsh-autosuggestions autojump vi-mode)
 
 source $ZSH/oh-my-zsh.sh
+# complete autosuggest with TAB
+bindkey '`' autosuggest-accept
 
 # User configuration
 
@@ -148,3 +149,9 @@ if [ -f '/Users/vosjoppe/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vo
 source /Users/vosjoppe/github/airflow/dev/breeze/autocomplete/breeze-complete-zsh.sh
 # END: Added by Updated Airflow Breeze autocomplete setup
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
