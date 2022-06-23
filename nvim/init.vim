@@ -30,6 +30,9 @@ Plug 'tpope/vim-commentary'
 " amazing git integrations
 Plug 'tpope/vim-fugitive'
 
+" terminal
+Plug 'akinsho/toggleterm.nvim'
+
 " lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
