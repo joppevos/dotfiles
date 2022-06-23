@@ -5,3 +5,4 @@
 - neovim
 - tmux
 - pre-commit
+- hammerspoon
