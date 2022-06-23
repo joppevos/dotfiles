@@ -123,7 +123,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 # add non-work email to git
-ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+# ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
 # tmux colors
 export TERM=xterm-256color
