@@ -35,3 +35,5 @@ local opts = {
 }
 
 require('symbols-outline').setup(opts)
+
+

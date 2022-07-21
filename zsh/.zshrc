@@ -15,9 +15,13 @@ alias diary='nvim -c ":VimwikiMakeDiaryNote"'
 ## launch index page from command line
 alias vw='nvim -c ":VimwikiIndex"'
 alias td='nvim ~/vimwiki/todo.md'
+alias tdvw='nvim ~/vimwiki/todovw.md'
+alias tdmj='nvim ~/vimwiki/todomj.md'
+alias tdl='nvim ~/vimwiki/todolife.md'
 source <(kubectl completion zsh)
 alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 source ~/.profile
+ssh-add --apple-use-keychain ~/.ssh/id_mj
 
 
 
