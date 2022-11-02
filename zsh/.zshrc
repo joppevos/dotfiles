@@ -1,7 +1,11 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-#
+
+# SPARK_HOME
+SPARK_HOME=”/usr/local/Cellar/apache-spark/2.4.4/libexec”
+export PATH=$PATH:$SPARK_HOME/bin
+
 autoload -Uz compinit
 compinit
 # Path to your oh-my-zsh installation.
@@ -94,6 +98,11 @@ plugins=(git zsh-autosuggestions autojump vi-mode)
 source $ZSH/oh-my-zsh.sh
 # complete autosuggest with TAB
 bindkey '`' autosuggest-accept
+
+# Escape with jj instead of ESc, since IDE will loce focus on terminal with esc
+bindkey -M viins 'jj' vi-cmd-mode
+
+
 
 # User configuration
 

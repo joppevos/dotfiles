@@ -2,6 +2,7 @@ local function on_attach()
 end
 
 require'lspconfig'.yamlls.setup{}
+require'lspconfig'.tsserver.setup {}
 
 require'lspconfig'.pyright.setup{
     on_attach=on_attach,
