@@ -62,7 +62,7 @@ nmap gD :action GotoImplementation<CR>
 map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
 map <leader>p     :NERDTree<CR>
 map <leader>t     :action ActivateTerminalToolWindow<CR>
-map <leadr>q     :action CloseActiveTab<CR>
+map <leader>q     :action CloseActiveTab<CR>
 map <leader>o     :action ReformatCode<CR>
 map <C-r>     :action Rerun<CR>
 
@@ -95,5 +95,9 @@ nmap <leader>gm :action Git.Menu<cr>
 nmap <leader>vl :action Vcs.Show.Log<cr>
 nmap <leader>vd :action Compare.LastVersion<cr>
 nmap <leader>vo :action Github.Open.In.Browser<cr>
+
+" Co"
+map <leader>cd :action copilot.disableCopilot<cr>
+map <leader>ce :action copilot.enableCopilot<cr>
 
 nmap ,ya :action CopyAbsolutePath<cr>

@@ -11,6 +11,21 @@ return require("packer").startup(function(use)
     use("nvim-lua/popup.nvim")
     use("nvim-telescope/telescope.nvim")
 
+    -- trying copilot for 1 week
+    -- use("github/copilot.vim")
+    use("github/copilot.vim")
+    use("zbirenbaum/copilot.lua");
+    use({
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function ()
+            require("copilot_cmp").setup()
+        end
+    });
+
+    -- tokyonight theme
+    use("folke/tokyonight.nvim")
+
     -- All the things
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
