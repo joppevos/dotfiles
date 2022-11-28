@@ -1,45 +1,20 @@
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# SPARK_HOME
-SPARK_HOME=”/usr/local/Cellar/apache-spark/2.4.4/libexec”
-export PATH=$PATH:$SPARK_HOME/bin
-
-autoload -Uz compinit
-compinit
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/vosjoppe/.oh-my-zsh"
-alias openvpn="/usr/local/opt/openvpn/sbin/openvpn"
-alias workout='nvim ~/Documents/notes/workout.md'
-alias k=kubectl
-alias t=terraform
-# launch diary from command line:
-alias diary='nvim -c ":VimwikiMakeDiaryNote"'
-## launch index page from command line
-alias vw='nvim -c ":VimwikiIndex"'
-alias td='nvim ~/vimwiki/todo.md'
-alias tdvw='nvim ~/vimwiki/todovw.md'
-alias tdmj='nvim ~/vimwiki/todomj.md'
-alias tdl='nvim ~/vimwiki/todolife.md'
-source <(kubectl completion zsh)
-alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
-source ~/.profile
-ssh-add --apple-use-keychain ~/.ssh/id_mj
-
-
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
-ZSH_DISABLE_COMPFIX=true
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "agnoster" "agnoster" )
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -48,14 +23,13 @@ ZSH_DISABLE_COMPFIX=true
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -70,6 +44,9 @@ ZSH_DISABLE_COMPFIX=true
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -96,15 +73,14 @@ ZSH_DISABLE_COMPFIX=true
 plugins=(git zsh-autosuggestions autojump vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-# complete autosuggest with TAB
-bindkey '`' autosuggest-accept
-
-# Escape with jj instead of ESc, since IDE will loce focus on terminal with esc
-bindkey -M viins 'jj' vi-cmd-mode
 
 
 
 # User configuration
+
+# Escape with jj instead of ESc, since IDE will loce focus on terminal with esc
+bindkey -M viins 'jj' vi-cmd-mode
+export EDITOR=nvim
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -129,42 +105,13 @@ bindkey -M viins 'jj' vi-cmd-mode
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /Users/vosjoppe/apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-prompt_context() {}
+source /Users/joppevos/github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
-
-# add non-work email to git
-# ssh-add --apple-use-keychain ~/.ssh/id_ed25519
-
-# tmux colors
-export TERM=xterm-256color
-. $HOME/.ghcup/env
-[ -f "/Users/vosjoppe/.ghcup/env" ] && source "/Users/vosjoppe/.ghcup/env" # ghcup-env
-
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-
-# Add bin to path
-export PATH="/Users/$USER/bin:$PATH"
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/vosjoppe/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vosjoppe/bin/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/joppevos/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/joppevos/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-# # The next line enables shell command completion for gcloud.
-# if [ -f '/Users/vosjoppe/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vosjoppe/bin/google-cloud-sdk/completion.zsh.inc'; fi
-# eval "$(pyenv init -)"
-
-# Created by `pipx` on 2022-04-11 08:19:51
-# export PATH="$PATH:/Users/vosjoppe/.local/bin"
-# START: Added by Updated Airflow Breeze autocomplete setup
-source /Users/vosjoppe/github/airflow/dev/breeze/autocomplete/breeze-complete-zsh.sh
-# END: Added by Updated Airflow Breeze autocomplete setup
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/joppevos/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/joppevos/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

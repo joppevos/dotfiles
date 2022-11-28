@@ -1,25 +1,28 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
+local builtin = require('telescope.builtin')
+require("telescope").setup({
+	defaults = {
+		file_sorter = require("telescope.sorters").get_fzy_sorter,
+		prompt_prefix = " >",
+		color_devicons = true,
 
-local actions = require "telescope.actions"
+		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 
-telescope.setup {
-  defaults = {
-
-    prompt_prefix = " ",
-    selection_caret = " ",
-    path_display = { "smart" },
-    file_ignore_patterns = { ".git/", "node_modules" },
-
-    mappings = {
-      i = {
-        ["<Down>"] = actions.cycle_history_next,
-        ["<Up>"] = actions.cycle_history_prev,
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
-      },
-    },
-  },
-}
+		mappings = {
+			i = {
+				["<C-x>"] = false,
+				["<C-q>"] = actions.send_to_qflist,
+                ["<CR>"] = actions.select_default,
+			},
+		},
+	},
+    --[[
+	extensions = {
+		fzy_native = {
+			override_generic_sorter = false,
+			override_file_sorter = true,
+		},
+	},
+    ]]
+})

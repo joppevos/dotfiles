@@ -1,5 +1,11 @@
 XDG_CONFIG_HOME="$HOME/.config"
 
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# install powerline fonts
+git clone https://github.com/powerline/fonts.git
+cd fonts 
+./install.sh
+
 ln -nfs "$(pwd)/hammerspoon"            "$HOME/.hammerspoon"
 ln -nfs "$(pwd)/zsh/.zshrc"             "$HOME/.zshrc"
 ln -nfs "$(pwd)/tmux/.tmux.conf"             "$HOME/.tmux.conf"
