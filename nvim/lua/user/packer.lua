@@ -25,6 +25,8 @@ return require("packer").startup(function(use)
 
     -- tokyonight theme
     use("folke/tokyonight.nvim")
+    use "almo7aya/openingh.nvim"
+
 
     -- All the things
     use("neovim/nvim-lspconfig")
