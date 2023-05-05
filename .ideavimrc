@@ -1,0 +1,103 @@
+":source ~/.ideavimrc
+" :actionlist gives all the actions
+
+" able to paste from clipboard
+" set clipboard+=unnamed
+syntax on
+set rnu " relational line numbers
+set commentary " able to comment out with gc
+set history=500
+set hlsearch
+set ideajoin
+set ignorecase
+set scrolloff=8       " Show next 8 lines while scrolling.
+set visualbell " stop the ringing bell
+
+"-------------------------------------------------------------------------------
+" IdeaVim Plugin Emulations
+"-------------------------------------------------------------------------------
+set NERDTree
+set surround " ys, cs, ds, S
+set highlightedyank
+
+"-------------------------------------------------------------------------------
+" Mappings
+"-------------------------------------------------------------------------------
+let mapleader=" "
+
+" window split navigation like VIM {{{
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+
+" maximize panel like tmux
+map <C->z :action No
+
+noremap Y y$
+
+" jump methods
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+
+" Yank to clipboard
+map <leader>y "+y
+map <leader>y "+y
+
+" Greatest remap EVER!!
+" Let me explain, this remap while in visiual mode
+" will delete what is currently highlighted and replace it
+" with what is in the register BUT it will YANK (delete) it
+" to a VOID register. Meaning I still have what I originally had
+" when I pasted. I don't loose the previous thing I YANKED!
+vnoremap <C-p> "_dP
+
+" fzf like
+nnoremap ff :action GotoFile<CR>
+nnoremap fa :action GotoAction<CR>
+noremap <Leader>f :action FindInPath<CR>
+nnoremap <leader>rf     :action RecentFiles<CR>
+
+nmap gD :action GotoImplementation<CR>
+map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
+map <leader>p     :NERDTree<CR>
+map <leader>t     :action ActivateTerminalToolWindow<CR>
+map <leader>q     :action CloseActiveTab<CR>
+map <leader>o     :action ReformatCode<CR>
+map <C-r>     :action Rerun<CR>
+
+" recent projects
+nmap <Leader><Leader>m :action ManageRecentProjects<CR>
+
+" The default C-o and C-i behaviours have certain inconsistencies with
+" Vim which I can't quite pinpoint
+" I'm using the default IntelliJ behaviours instead.
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
+map g; <Action>(JumpToLastChange)
+map g, <Action>(JumpToNextChange)
+
+" Folding like vim
+nnoremap zC         :action CollapseRegionRecursively<CR>
+nnoremap zO         :action ExpandRegionRecursively<CR>
+map <leader>zc      :action CollapseAllRegions<CR>
+map <leader>zo      :action ExpandAllRegions<CR>
+
+" To set editor >code style -> increase hard wraps to > 200"
+" make sure to turn on line numbers in settings before
+map <C-z> <Action>(ToggleFullScreen)<Action>(ToggleDistractionFreeMode)
+
+" Useful Git actions
+nmap <leader>gb :action Git.Branches<cr>
+nmap <leader>gp :action Git.Pull<cr>
+nmap <leader>gm :action Git.Menu<cr>
+
+nmap <leader>vl :action Vcs.Show.Log<cr>
+nmap <leader>vd :action Compare.LastVersion<cr>
+nmap <leader>vo :action Github.Open.In.Browser<cr>
+
+" Co"
+map <leader>cd :action copilot.disableCopilot<cr>
+map <leader>ce :action copilot.enableCopilot<cr>
+
+nmap ,ya :action CopyAbsolutePath<cr>
