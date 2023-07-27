@@ -33,7 +33,7 @@ return require("packer").startup(function(use)
     use("MunifTanjim/nui.nvim")
     use("dpayne/CodeGPT.nvim")
     -- hardmode
-    use("takac/vim-hardtime")
+    -- use("takac/vim-hardtime")
 
 
     -- tokyonight theme

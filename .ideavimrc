@@ -1,24 +1,51 @@
-":source ~/.ideavimrc
-" :actionlist gives all the actions
-
 " able to paste from clipboard
 " set clipboard+=unnamed
+" :actionlist gives all the actions
+
 syntax on
 set rnu " relational line numbers
-set commentary " able to comment out with gc
 set history=500
 set hlsearch
 set ideajoin
-set ignorecase
 set scrolloff=8       " Show next 8 lines while scrolling.
 set visualbell " stop the ringing bell
+set noscrollbind
+set nocursorbind
+set ideajoin "https://github.com/JetBrains/ideavim/blob/master/doc/ideajoin-examples.md
+set ruler " show the line number
+set formatoptions+=j              " Delete comment charalter when joining commented lines
+set sc                            " show commands as you type them
+set lazyredraw                    " make vim a little speedier
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Search settings
+" ---------------------------------------------------------------------------------------------------------------------
+set ignorecase                    " Ignore case by default
+set smartcase                     " Make search case sensitive only if it contains uppercase letters
+set wrapscan                      " Search again from top when reached the bottom
+" set hlsearch
+set nohlsearch                    " Don't highlight after search
+set incsearch                     " incremental searching
+
+""""""""""
+set shiftwidth=4
+set tabstop=4
+set smarttab
+
+set autoindent "Auto indent
+set smartindent "Smart indent
+set wrap "Wrap lines
+""""""""""""""""""""
 
 "-------------------------------------------------------------------------------
 " IdeaVim Plugin Emulations
 "-------------------------------------------------------------------------------
 set NERDTree
-set surround " ys, cs, ds, S
 set highlightedyank
+set commentary " able to comment out with gc
+set surround " ys, cs, ds, S
+
+
 
 "-------------------------------------------------------------------------------
 " Mappings
@@ -53,10 +80,11 @@ map <leader>y "+y
 vnoremap <C-p> "_dP
 
 " fzf like
-nnoremap ff :action GotoFile<CR>
+
+nnoremap <leader>ff :action GotoFile<CR>
+noremap <Leader>fg :action FindInPath<CR>
 nnoremap fa :action GotoAction<CR>
-noremap <Leader>f :action FindInPath<CR>
-nnoremap <leader>rf     :action RecentFiles<CR>
+nnoremap <leader>fr     :action RecentFiles<CR>
 
 nmap gD :action GotoImplementation<CR>
 map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
@@ -65,6 +93,14 @@ map <leader>t     :action ActivateTerminalToolWindow<CR>
 map <leader>q     :action CloseActiveTab<CR>
 map <leader>o     :action ReformatCode<CR>
 map <C-r>     :action Rerun<CR>
+
+"
+" close all but this
+noremap <leader>gx :action CloseAllEditorsButActive<CR>
+" hide all
+noremap <leader>h <ESC>:action HideAllWindows<CR>
+
+
 
 " recent projects
 nmap <Leader><Leader>m :action ManageRecentProjects<CR>
@@ -85,19 +121,26 @@ map <leader>zo      :action ExpandAllRegions<CR>
 
 " To set editor >code style -> increase hard wraps to > 200"
 " make sure to turn on line numbers in settings before
-map <C-z> <Action>(ToggleFullScreen)<Action>(ToggleDistractionFreeMode)
+map <C-z> <Action>(ToggleDistractionFreeMode)
 
 " Useful Git actions
 nmap <leader>gb :action Git.Branches<cr>
+nmap <leader>gd :action GitShowDiffWithBranchAction<cr>
 nmap <leader>gp :action Git.Pull<cr>
 nmap <leader>gm :action Git.Menu<cr>
+map <leader>gpr :action Github.Create.Pull.Request<CR>
+
 
 nmap <leader>vl :action Vcs.Show.Log<cr>
 nmap <leader>vd :action Compare.LastVersion<cr>
 nmap <leader>vo :action Github.Open.In.Browser<cr>
+map <leader>vg :action Github.Create.Gist<CR>
+map <leader>vh :action Vcs.History<cr>                                       
+
 
 " Co"
 map <leader>cd :action copilot.disableCopilot<cr>
 map <leader>ce :action copilot.enableCopilot<cr>
 
 nmap ,ya :action CopyAbsolutePath<cr>
+map <leader>s <Action>(SelectInProjectView)<cr>
