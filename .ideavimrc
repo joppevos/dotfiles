@@ -82,16 +82,17 @@ vnoremap <C-p> "_dP
 " fzf like
 
 nnoremap <leader>ff :action GotoFile<CR>
-noremap <Leader>fg :action FindInPath<CR>
+noremap <Leader>fw :action FindInPath<CR>
 nnoremap fa :action GotoAction<CR>
 nnoremap <leader>fr     :action RecentFiles<CR>
 
 nmap gD :action GotoImplementation<CR>
 map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
-map <leader>p     :NERDTree<CR>
+" map <leader>o     :NERDTree<CR>
+map <leader>o <Action>(SelectInProjectView)<cr>
 map <leader>t     :action ActivateTerminalToolWindow<CR>
 map <leader>q     :action CloseActiveTab<CR>
-map <leader>o     :action ReformatCode<CR>
+map <leader>gf     :action ReformatCode<CR>
 map <C-r>     :action Rerun<CR>
 
 "
@@ -99,6 +100,8 @@ map <C-r>     :action Rerun<CR>
 noremap <leader>gx :action CloseAllEditorsButActive<CR>
 " hide all
 noremap <leader>h <ESC>:action HideAllWindows<CR>
+
+noremap <leader>l <ESC>:action HighlightUsagesInFile<CR>
 
 
 
@@ -129,18 +132,38 @@ nmap <leader>gd :action GitShowDiffWithBranchAction<cr>
 nmap <leader>gp :action Git.Pull<cr>
 nmap <leader>gm :action Git.Menu<cr>
 map <leader>gpr :action Github.Create.Pull.Request<CR>
+nmap <leader>gc :action Git.CompareWithBranch<cr>
 
 
 nmap <leader>vl :action Vcs.Show.Log<cr>
 nmap <leader>vd :action Compare.LastVersion<cr>
 nmap <leader>vo :action Github.Open.In.Browser<cr>
+nmap <leader>vp :action Github.Open.Commit.In.Browser<cr>
 map <leader>vg :action Github.Create.Gist<CR>
 map <leader>vh :action Vcs.History<cr>                                       
 
+" intention
+noremap gi <ESC>:action ShowIntentionActions<CR>
 
 " Co"
 map <leader>cd :action copilot.disableCopilot<cr>
 map <leader>ce :action copilot.enableCopilot<cr>
 
 nmap ,ya :action CopyAbsolutePath<cr>
-map <leader>s <Action>(SelectInProjectView)<cr>
+
+
+" 本行皆为debug所用
+" resume - z
+noremap <leader>z <ESC>:action Resume<CR>
+" step over
+noremap <leader>x <ESC>:action StepOver<CR>
+" step into
+noremap <leader>c <ESC>:action SmartStepInto<CR>
+" evaluate expression - v
+noremap <leader>v <ESC>:action EvaluateExpression<CR>
+" breakpoints
+noremap <leader>b <ESC>:action ViewBreakpoints<CR>
+" 因为属于breakpoint范畴的功能, 所以就选择了b和m的隔壁
+noremap <leader>n <ESC>:action ToggleLineBreakpoint<CR>
+" mute breakpoints
+noremap <leader>m <ESC>:action XDebugger.MuteBreakpoints<CR>
