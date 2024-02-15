@@ -88,7 +88,7 @@ nnoremap <leader>fr     :action RecentFiles<CR>
 
 nmap gD :action GotoImplementation<CR>
 map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
-" map <leader>o     :NERDTree<CR>
+map <leader>p     :NERDTree<CR>
 map <leader>o <Action>(SelectInProjectView)<cr>
 map <leader>t     :action ActivateTerminalToolWindow<CR>
 map <leader>q     :action CloseActiveTab<CR>
@@ -138,16 +138,14 @@ nmap <leader>gc :action Git.CompareWithBranch<cr>
 nmap <leader>vl :action Vcs.Show.Log<cr>
 nmap <leader>vd :action Compare.LastVersion<cr>
 nmap <leader>vo :action Github.Open.In.Browser<cr>
-nmap <leader>vp :action Github.Open.Commit.In.Browser<cr>
 map <leader>vg :action Github.Create.Gist<CR>
 map <leader>vh :action Vcs.History<cr>                                       
 
 " intention
 noremap gi <ESC>:action ShowIntentionActions<CR>
 
-" Co"
 map <leader>cd :action copilot.disableCopilot<cr>
-map <leader>ce :action copilot.enableCopilot<cr>
+C:action RestoreDefaultLayout
 
 nmap ,ya :action CopyAbsolutePath<cr>
 
@@ -159,7 +157,7 @@ noremap <leader>z <ESC>:action Resume<CR>
 noremap <leader>x <ESC>:action StepOver<CR>
 " step into
 noremap <leader>c <ESC>:action SmartStepInto<CR>
-" evaluate expression - v
+
 noremap <leader>v <ESC>:action EvaluateExpression<CR>
 " breakpoints
 noremap <leader>b <ESC>:action ViewBreakpoints<CR>
@@ -167,3 +165,12 @@ noremap <leader>b <ESC>:action ViewBreakpoints<CR>
 noremap <leader>n <ESC>:action ToggleLineBreakpoint<CR>
 " mute breakpoints
 noremap <leader>m <ESC>:action XDebugger.MuteBreakpoints<CR>
+
+nmap <leader>dl :action RestoreDefaultLayout<CR>
+
+" How to commit and push without mouse
+" first commit
+" command + k
+" now push
+" option + p
+" option + p
