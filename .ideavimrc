@@ -128,7 +128,6 @@ map <C-z> <Action>(ToggleDistractionFreeMode)
 
 " Useful Git actions
 nmap <leader>gb :action Git.Branches<cr>
-nmap <leader>gd :action GitShowDiffWithBranchAction<cr>
 nmap <leader>gp :action Git.Pull<cr>
 nmap <leader>gm :action Git.Menu<cr>
 map <leader>gpr :action Github.Create.Pull.Request<CR>
@@ -144,8 +143,9 @@ map <leader>vh :action Vcs.History<cr>
 " intention
 noremap gi <ESC>:action ShowIntentionActions<CR>
 
+" Copilot
 map <leader>cd :action copilot.disableCopilot<cr>
-C:action RestoreDefaultLayout
+map <leader>cp :action copilot.chat.show<cr>
 
 nmap ,ya :action CopyAbsolutePath<cr>
 

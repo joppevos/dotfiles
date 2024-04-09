@@ -9,7 +9,8 @@ XDG_CONFIG_HOME="$HOME/.config"
 # ln -nfs "$(pwd)/hammerspoon"            "$HOME/.hammerspoon"
 # ln -nfs "$(pwd)/zsh/.zshrc"             "$HOME/.zshrc"
 # ln -nfs "$(pwd)/tmux/.tmux.conf"             "$HOME/.tmux.conf"
-ln -nfs "$(pwd)/nvim"               "$XDG_CONFIG_HOME/nvim"
+# ln -nfs "$(pwd)/nvim"               "$XDG_CONFIG_HOME/nvim"
+ln -nfs "$(pwd)/nvchad_config"               "$XDG_CONFIG_HOME/nvim/lua/custom"
 
 
 

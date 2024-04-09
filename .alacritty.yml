@@ -8,6 +8,8 @@
 # to the user's home directory starting with `~/`.
 import:
  - ~/.config/alacritty/themes/themes/monokai_charcoal.yaml
+   # - ~/.config/alacritty/themes/themes/github_light.yaml
+
 
 
 
