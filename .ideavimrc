@@ -136,9 +136,8 @@ nmap <leader>gc :action Git.CompareWithBranch<cr>
 
 nmap <leader>vl :action Vcs.Show.Log<cr>
 nmap <leader>vd :action Compare.LastVersion<cr>
-nmap <leader>vo :action Github.Open.In.Browser<cr>
-map <leader>vg :action Github.Create.Gist<CR>
-map <leader>vh :action Vcs.History<cr>                                       
+nmap <leader>vo :action GitHub.MainMenu<cr>
+map <leader>vh :action Vcs.History<cr>
 
 " intention
 noremap gi <ESC>:action ShowIntentionActions<CR>
