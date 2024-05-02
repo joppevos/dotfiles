@@ -1,6 +1,9 @@
 import = ["/Users/j.vos/.config/alacritty/themes/themes/monokai_charcoal.toml"]
 
 live_config_reload = true
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "tmux attach || tmux"]
 
 [font]
 size = 18.0
