@@ -1,0 +1,12 @@
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	autocrlf = input
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[user]
+	name = j.vos
+	email = joppe.vos@deliveryhero.com
+[push]
+	default = current
+[pull]
+	rebase = true
