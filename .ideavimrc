@@ -84,7 +84,7 @@ vnoremap <C-p> "_dP
 nnoremap <leader>ff :action GotoFile<CR>
 noremap <Leader>fw :action FindInPath<CR>
 nnoremap fa :action GotoAction<CR>
-nnoremap <leader>fr     :action RecentFiles<CR>
+nnoremap <leader>fo     :action RecentFiles<CR>
 
 nmap gD :action GotoImplementation<CR>
 map <leader>gr     :action Refactorings.QuickListPopupAction<CR>
@@ -100,8 +100,11 @@ map <C-r>     :action Rerun<CR>
 noremap <leader>gx :action CloseAllEditorsButActive<CR>
 " hide all
 noremap <leader>h <ESC>:action HideAllWindows<CR>
-
 noremap <leader>l <ESC>:action HighlightUsagesInFile<CR>
+nmap <leader>wu <Action>(UnsplitAll)
+
+nnoremap <leader>su :action ShowUsages<CR>
+nnoremap <leader>sU :action FindUsages<CR>
 
 
 
@@ -166,6 +169,8 @@ noremap <leader>n <ESC>:action ToggleLineBreakpoint<CR>
 noremap <leader>m <ESC>:action XDebugger.MuteBreakpoints<CR>
 
 nmap <leader>dl :action RestoreDefaultLayout<CR>
+
+nmap <leader>gg  <ESC>:action CompareClipboardWithSelection<CR>
 
 " How to commit and push without mouse
 " first commit
