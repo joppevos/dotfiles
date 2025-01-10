@@ -154,3 +154,5 @@ export DDU_name=sales_revenue
 export AIRFLOW_PYTHON_VERSION=3.10
 export AIRFLOW_VERSION=2.5.3
 alias lzd='lazydocker'
+source <(fzf --zsh) # brew install fzf
+
