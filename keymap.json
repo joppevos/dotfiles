@@ -1,0 +1,32 @@
+[
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "space y": "editor::CopyToClipboard",
+      "space p": "editor::PasteFromClipboard",
+      "space f f": "file_finder::Toggle",
+      "space f w": "workspace::NewSearch",
+      "space o": "tab_switcher::Toggle",
+      "space t": "workspace::NewCenterTerminal",
+      "space q": "pane::CloseActiveItem",
+      "space g f": "editor::Format",
+      "space g r": "editor::Refactor",
+      "space g b": "editor::ToggleGitBlame",
+      "space g p": "git::Pull",
+      "space g c": "git::CompareWithBranch",
+      "space v l": "git::ShowLog",
+      "space v d": "git::CompareLastVersion",
+      "g D": "editor::GotoDefinition",
+      "g r": "editor::RenameSymbol",
+      "g ;": "editor::JumpToLastChange",
+      "g ,": "editor::JumpToNextChange",
+      "z C": "editor::FoldAll",
+      "z O": "editor::UnfoldAll",
+      "leader d": "diagnostics::Deploy",
+      "leader h": "workspace::ToggleLeftDock",
+      "leader e": "workspace::ToggleExplorer",
+      "leader /": "workspace::NewSearch"
+    }
+  }
+]
+
